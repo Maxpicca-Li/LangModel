@@ -38,9 +38,9 @@ class LangModel():
         self.NoBosEos_total_cnt = sum(self.unigram_counter.values()) - self.unigram_counter['BOS'] - self.unigram_counter['EOS']
         self.NoBos_total_cnt = sum(self.unigram_counter.values()) - self.unigram_counter['BOS']
 
-        self.A = (self.gt2max+1)*self.bigram_cnt_counter[self.gt2max+1] / self.bigram_cnt_counter[1]
         self.gt1max = 0
         self.gt2max = 10
+        self.A = (self.gt2max+1)*self.bigram_cnt_counter[self.gt2max+1] / self.bigram_cnt_counter[1]
         self.no_word_p = 1e-10  # 陌生词汇概率  → 语料库越大，陌生词汇概率越小
         self.no_word_list = []  # 生词序列
 
